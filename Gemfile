@@ -9,3 +9,8 @@ gem "rake", "~> 12.0"
 gem "rspec", "~> 3.0"
 gem 'sinatra'
 gem 'thin' # servidor leve
+
+git add Gemfile.lock
+git commit -m "fix: update Gemfile.lock after adding sinatra and thin"
+git push origin main
+
