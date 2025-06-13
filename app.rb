@@ -1,21 +1,27 @@
-require 'sinatra'
-require 'json'
-require_relative 'lib/shopee-api' # adapte conforme o caminho real
+require "sinatra"
+require "json"
+require_relative "lib/shopee-api" # ajuste esse caminho se necessário
 
-get '/' do
-  'Shopee API Wrapper Online'
+# Simples rota de teste
+get "/" do
+  "Shopee API Wrapper Online"
 end
 
-get '/products' do
+# Exemplo: rota de produtos
+get "/products" do
   content_type :json
-  # Exemplo de chamada usando a gem local
-  # Substitua pelo método real da sua lib
+
   client = Shopee::Client.new(
-    partner_id: ENV['SHOPEE_PARTNER_ID'],
-    partner_key: ENV['SHOPEE_PARTNER_KEY'],
-    redirect: ENV['SHOPEE_REDIRECT_URL']
+    partner_id: ENV["SHOPEE_PARTNER_ID"],
+    partner_key: ENV["SHOPEE_PARTNER_KEY"],
+    redirect: ENV["SHOPEE_REDIRECT_URL"]
   )
-  
-  result = client.get_items # adapte esse método conforme sua gem
-  result.to_json
+
+  begin
+    result = client.get_items # substitua com o método correto da sua gem
+    result.to_json
+  rescue => e
+    status 500
+    { error: e.message }.to_json
+  end
 end
