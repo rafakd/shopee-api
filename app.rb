@@ -1,6 +1,6 @@
 require "sinatra"
 require "json"
-require_relative "lib/shopee-api" # ajuste esse caminho se necessário
+require_relative "lib/shopee/api" # ajuste esse caminho se necessário
 
 # Simples rota de teste
 get "/" do
