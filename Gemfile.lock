@@ -29,6 +29,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    base64 (0.1.2)
     builder (3.2.4)
     concurrent-ruby (1.1.7)
     crack (0.4.3)
@@ -133,6 +134,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  base64 (~> 0.1.0)
   dotenv-rails
   minitest (>= 5.20.0)
   nokogiri (>= 1.15.0)
