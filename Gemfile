@@ -1,16 +1,10 @@
 source "https://rubygems.org"
 
-ruby '3.2.2'
- 
-# Specify your gem's dependencies in shopee-api.gemspec
+ruby "3.2.2"
+
+# Suas dependências originais
 gemspec
 
-gem "rake", "~> 12.0"
-gem "rspec", "~> 3.0"
-gem 'sinatra'
-gem 'thin' # servidor leve
-
-git add Gemfile.lock
-git commit -m "fix: update Gemfile.lock after adding sinatra and thin"
-git push origin main
-
+# Novas para API HTTP
+gem "sinatra"
+gem "thin"
